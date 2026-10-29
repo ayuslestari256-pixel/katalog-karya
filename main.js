@@ -35,7 +35,9 @@ function kartu(k) {
 function tampil() {
   const hasil = saring();
   galeri.replaceChildren(...hasil.map(kartu));
-  jumlah.textContent = `Menampilkan ${KARYA.length} dari ${KARYA.length} karya`;
+  // Ubah KARYA.length yang pertama menjadi hasil.length
+  jumlah.textContent = `Menampilkan ${hasil.length} dari ${KARYA.length} karya`;
+  pasangDetail(); //
 }
  
 function pasangDetail() {
@@ -51,4 +53,4 @@ function pasangDetail() {
 tampil();
 pasangDetail();
 cari.addEventListener('input', tampil);
-document.querySelector('#filter-kategori').addEventListener('change', tampil);
+document.querySelector('#filterKategori').addEventListener('change', tampil);
