@@ -9,11 +9,11 @@ const filterKategori = document.querySelector('#filterKategori');
 function saring() {
   const kata = cari.value.trim().toLowerCase();
   const kategori = filterKategori.value;
-  return KARYA.filter(k) =>
+  return KARYA.filter((k) =>
     (kategori === 'semua' || k.kategori === kategori) &&
-   k.judul.toLowerCase().includes(kata)
+    k.judul.toLowerCase().includes(kata)
+  );
 }
- 
 function kartu(k) {
   const kolom = document.createElement('div');
   kolom.className = 'col-12 col-sm-6 col-lg-4';
@@ -35,9 +35,9 @@ function kartu(k) {
 function tampil() {
   const hasil = saring();
   galeri.replaceChildren(...hasil.map(kartu));
+  // Ubah KARYA.length yang pertama menjadi hasil.length
   jumlah.textContent = `Menampilkan ${hasil.length} dari ${KARYA.length} karya`;
-  pasangDetail();
-
+  pasangDetail(); //
 }
  
 function pasangDetail() {
