@@ -9,7 +9,7 @@ const filterKategori = document.querySelector('#filterKategori');
 function saring() {
   const kata = cari.value.trim().toLowerCase();
   const kategori = filterKategori.value;
-  return KARYA.filter((k) =>
+  return KARYA.filter(k) =>
     (kategori === 'semua' || k.kategori === kategori) &&
    k.judul.toLowerCase().includes(kata)
 }
